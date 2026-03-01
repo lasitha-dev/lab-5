@@ -30,12 +30,12 @@ public class ItemController {
         return item;
     }
 
-    @GetMapping
+    @GetMapping({"", "/"})
     public List<Map<String, Object>> getItems() {
         return items;
     }
 
-    @PostMapping
+    @PostMapping({"", "/"})
     public ResponseEntity<Map<String, Object>> addItem(@RequestBody Map<String, Object> itemData) {
         String name = (String) itemData.get("name");
         Map<String, Object> newItem = createItem(name);

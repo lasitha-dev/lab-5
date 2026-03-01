@@ -14,12 +14,12 @@ public class PaymentController {
     private List<Map<String, Object>> payments = new ArrayList<>();
     private int idCounter = 1;
 
-    @GetMapping
+    @GetMapping({"", "/"})
     public List<Map<String, Object>> getPayments() {
         return payments;
     }
 
-    @PostMapping("/process")
+    @PostMapping({"/process", "/process/"})
     public ResponseEntity<Map<String, Object>> processPayment(@RequestBody Map<String, Object> payment) {
         payment.put("id", idCounter++);
         payment.put("status", "SUCCESS");

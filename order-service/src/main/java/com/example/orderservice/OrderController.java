@@ -14,12 +14,12 @@ public class OrderController {
     private List<Map<String, Object>> orders = new ArrayList<>();
     private int idCounter = 1;
 
-    @GetMapping
+    @GetMapping({"", "/"})
     public List<Map<String, Object>> getOrders() {
         return orders;
     }
 
-    @PostMapping
+    @PostMapping({"", "/"})
     public ResponseEntity<Map<String, Object>> placeOrder(@RequestBody Map<String, Object> order) {
         order.put("id", idCounter++);
         order.put("status", "PENDING");
