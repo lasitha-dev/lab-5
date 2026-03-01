@@ -37,7 +37,6 @@ lab-5/
 - Java 17 (for local deployment)
 - Maven (for building)
 
-**Note:** If Docker has network connectivity issues, use the local deployment option below.
 
 ## Build Instructions
 
@@ -49,21 +48,7 @@ cd ../order-service && mvn clean package -DskipTests
 cd ../payment-service && mvn clean package -DskipTests
 ```
 
-### Option A: Run Without Docker (If Docker has network issues)
-
-Simply double-click `run-local.bat` or run in PowerShell:
-```powershell
-.\run-local.ps1
-```
-
-This will start all three services in separate windows:
-- Item Service: http://localhost:8081
-- Order Service: http://localhost:8082
-- Payment Service: http://localhost:8083
-
-**Note:** When running locally without Docker, test the services directly on their ports (8081, 8082, 8083) instead of through the API Gateway.
-
-### Option B: Build and Run Docker Containers
+### Build and Run Docker Containers
 ```bash
 # From the root directory
 docker-compose build
